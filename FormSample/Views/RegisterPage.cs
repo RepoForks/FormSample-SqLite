@@ -91,7 +91,7 @@ namespace FormSample
 			//        var result = await this.service.AddAgent(c);
 			//        if (result.ResponseCode == "200")
 			//        {
-			//            await this.DisplayAlert("success", result.ResponseMessage, "OK");
+			            // await this.DisplayAlert("success", result.ResponseMessage, "OK");
 
 			//            await this.Navigation.PopToRootAsync();
 			//        }

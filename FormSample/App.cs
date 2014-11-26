@@ -34,8 +34,8 @@ namespace FormSample
 				if(!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
 				{
 				}
-				CreateDatabase ();
-				page=  new NavigationPage(new RegisterPage());
+				// CreateDatabase ();
+				page=  new NavigationPage(new LoginPage());
 
 //			    page = new NavigationPage(new LoginPage());
 //                if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))

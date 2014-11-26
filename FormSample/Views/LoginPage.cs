@@ -43,14 +43,25 @@ namespace FormSample.Views
             password.IsPassword = true;
             layout.Children.Add(password);
 
+            var forgotPassword = new Button{ Text = "I have forgetton my password", TextColor = Color.Blue };
 
-
-            var button = new Button { Text = "Sign In", TextColor = Color.White };
+			var button = new Button { Text = "Sign In", TextColor = Color.White,BackgroundColor = Color.Blue, };
             button.SetBinding(Button.CommandProperty, LoginViewModel.LoginCommandPropertyName);
 
+			var registerButton = new Button{ Text = "I don't have a recruiter account..",BackgroundColor = Color.Lime, TextColor = Color.White };
+            registerButton.SetBinding(Button.CommandProperty, LoginViewModel.GoToRegisterCommandPropertyName);
+
+            var downloadButton = new Button{ Text = "Download Terms and Conditions",BackgroundColor = Color.Yellow, TextColor = Color.White };
+			var contactUsButton = new Button{ Text = "Contact Us",BackgroundColor = Color.Teal, TextColor = Color.White };
+
             layout.Children.Add(button);
+			layout.Children.Add(registerButton);
+			layout.Children.Add(downloadButton);
+			layout.Children.Add(contactUsButton);
 
             Content = new ScrollView { Content = layout };
         }
+
+       
     }
 }

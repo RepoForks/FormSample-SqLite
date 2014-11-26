@@ -49,17 +49,15 @@ namespace FormSample.ViewModel
             }
         }
 
-        protected async Task ExecuteLoginCommand()
+		protected async Task ExecuteLoginCommand()
         {
             try
             {
-                 await navigation.PushAsync(new HomePage());
-                //var navigationPage = new NavigationPage(new HomePage());
-                //this.navigation = navigationPage.Navigation;
-                //return navigationPage;
-
-                ////Debug.WriteLine(username);
-                ////Debug.WriteLine(password);
+                if(await ValidateFields())
+                {
+                    await navigation.PushAsync(new HomePage());
+                }
+                 
             }
             catch (Exception ex)
             {
@@ -71,5 +69,36 @@ namespace FormSample.ViewModel
             //}
         }
 
+        private Command goToRegisterCommand;
+        public const string GoToRegisterCommandPropertyName = "GoToRegisterCommand";
+        public Command GoToRegisterCommand
+        {
+            get
+            {
+                return goToRegisterCommand ?? (goToRegisterCommand = new Command(async () => await ExecuteGoToRegisterCommand()));
+            }
+        }
+
+        protected async Task ExecuteGoToRegisterCommand()
+        {
+            try
+            {
+                await navigation.PushAsync(new RegisterPage());
+            }
+            catch(Exception ex)
+            {
+            }
+        }
+
+        private async Task<bool> ValidateFields()
+        {
+            bool isValid = true;
+            if (string.IsNullOrWhiteSpace(this.Username) && string.IsNullOrWhiteSpace(this.Password))
+            {
+                // await Page.DisplayAlert("success", "Username or password is required", "OK");
+                isValid = false;
+            }
+            return isValid;
+        }
     }
 }

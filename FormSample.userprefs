@@ -1,49 +1,44 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.3215bc9a" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FormSample\App.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FormSample\ViewModel\LoginViewModel.cs">
     <Files>
-      <File FileName="FormSample\App.cs" Line="14" Column="14" />
-      <File FileName="FormSample\Helpers\Settings.cs" Line="41" Column="41" />
-      <File FileName="FormSample\Services\DataService.cs" Line="4" Column="4" />
-      <File FileName="FormSample\Model\Customer.cs" Line="10" Column="10" />
-      <File FileName="FormSample\Services\ResponseBase.cs" Line="3" Column="3" />
-      <File FileName="FormSample\ViewModel\BaseViewModel.cs" Line="9" Column="9" />
-      <File FileName="FormSample\ViewModel\LoginViewModel.cs" Line="41" Column="41" />
-      <File FileName="FormSample\Views\LoginPage.cs" Line="3" Column="3" />
-      <File FileName="FormSample\Views\CustomCell.cs" Line="44" Column="44" />
-      <File FileName="FormSample\Views\RegisterPage.cs" Line="86" Column="86" />
-      <File FileName="FormSample\Views\HomePage.cs" Line="67" Column="67" />
-      <File FileName="FormSample.Android\MainActivity.cs" Line="10" Column="10" />
-      <File FileName="FormSample\PlotView.cs" Line="3" Column="3" />
       <File FileName="FormSample\Database\AgentDatabase.cs" Line="1" Column="1" />
-      <File FileName="FormSample.Android\SqLiteAndroid.cs" Line="1" Column="1" />
-      <File FileName="FormSample\Database\ISqLite.cs" Line="20" Column="20" />
+      <File FileName="FormSample\App.cs" Line="44" Column="44" />
+      <File FileName="FormSample\Views\RegisterPage.cs" Line="4" Column="4" />
+      <File FileName="FormSample\ViewModel\AgentViewModel.cs" Line="1" Column="1" />
+      <File FileName="f:\RnD\xamarin\FormSample-new-master\FormSample.Android\SqLiteAndroid.cs" Line="1" Column="1" />
+      <File FileName="FormSample\Helpers\Settings.cs" Line="3" Column="3" />
+      <File FileName="FormSample\Services\DataService.cs" Line="9" Column="9" />
+      <File FileName="FormSample\Database\ISqLite.cs" Line="19" Column="19" />
+      <File FileName="FormSample\Model\Customer.cs" Line="30" Column="30" />
+      <File FileName="FormSample\Views\LoginPage.cs" Line="39" Column="39" />
+      <File FileName="FormSample\ViewModel\LoginViewModel.cs" Line="55" Column="55" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="FormSample" expanded="True">
             <Node name="Database" expanded="True" />
-            <Node name="Helpers" expanded="True" />
-            <Node name="App.cs" selected="True" />
+            <Node name="Model" expanded="True" />
+            <Node name="ViewModel" expanded="True">
+              <Node name="LoginViewModel.cs" selected="True" />
+            </Node>
+            <Node name="Views" expanded="True" />
           </Node>
           <Node name="FormSample.Android" expanded="True">
-            <Node name="Assets" expanded="True" />
+            <Node name="Packages" expanded="True" />
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="30" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\App.cs" line="21" column="1" />
       <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="15" column="1" />
       <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample.Android\SqLiteAndroid.cs" line="34" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\App.cs" line="25" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="31" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="35" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
