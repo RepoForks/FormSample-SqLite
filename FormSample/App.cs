@@ -15,26 +15,14 @@ namespace FormSample
     {
         public static INavigation Navigation { get; private set; }
 
-        static void CreateDatabase()
-        {
-            FormSample.AgentDatabase d = new AgentDatabase();
-            var t = d.GetAgents();
-            d.SaveItem(new Agent()
-            {
-                AgencyName = "test",
-                Email = "abc@xyz.com",
-                FirstName = "Thanki",
-                LastName = "sudhir",
-                Phone = "99933423",
-            });
-        }
 
         private async Task<bool> IsNetworkAvailable()
         {
             var network = Resolver.Resolve<IDevice>().Network;
             //var dev = Resolver.Resolve<IDevice>().PhoneService;
             //dev.DialNumber("989898989");
-            
+           
+
             var isReachable = await network.IsReachable("www.yahoo.com", TimeSpan.FromSeconds(15));
             return isReachable;
 
@@ -46,12 +34,14 @@ namespace FormSample
             NavigationPage page = null;
             try
             {
-                Settings.GeneralSettings = "hello";
+                /// Settings.GeneralSettings= string.Empty;
                 if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
                 {
+                    page= new NavigationPage(new LoginPage());
                 }
-                // CreateDatabase ();
-                page = new NavigationPage(new LoginPage());
+                else{
+                    page = new NavigationPage(new LoginPage());
+                }
 
                 //			    page = new NavigationPage(new LoginPage());
                 //                if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))

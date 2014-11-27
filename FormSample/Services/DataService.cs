@@ -12,7 +12,7 @@ namespace FormSample
     {
 		private string url = "https://dataservice.churchill-knight.co.uk/Agents";
 
-		private string postDataUrl = "https://dataservice.churchill-knight.co.uk/contractor";
+        private string postDataUrl = "http://134.213.136.240:1081/api/agents";
 
         public List<Agent> filteredCustomerList { get; set; }
 
@@ -43,14 +43,14 @@ namespace FormSample
             return response;
         }
 
-        public async Task<ResponseBase> AddAgent(Agent cust)
+        public async Task<Agent> AddAgent(Agent cust)
         {
             var requestJson = JsonConvert.SerializeObject(cust, Formatting.Indented);
 
             HttpClient client = new HttpClient();
             var result = await client.PostAsync(postDataUrl,new StringContent(requestJson, Encoding.UTF8, "application/json"));
             var json = await result.Content.ReadAsStringAsync();
-            var response = JsonConvert.DeserializeObject<ResponseBase>(json);
+            var response = JsonConvert.DeserializeObject<Agent>(json);
             return response;
         }
 

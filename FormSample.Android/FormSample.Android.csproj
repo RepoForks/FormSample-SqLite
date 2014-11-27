@@ -94,6 +94,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\drawable\index4.jpg" />
+    <AndroidResource Include="Resources\drawable\index5.jpg" />
+    <AndroidResource Include="Resources\drawable\index6.jpg" />
+    <AndroidResource Include="Resources\drawable\index7.jpg" />
+    <AndroidResource Include="Resources\drawable\index8.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

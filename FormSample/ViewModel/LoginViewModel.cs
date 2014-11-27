@@ -95,6 +95,7 @@ namespace FormSample.ViewModel
             bool isValid = true;
             if (string.IsNullOrWhiteSpace(this.Username) && string.IsNullOrWhiteSpace(this.Password))
             {
+                MessagingCenter.Send<LoginViewModel,string>(this, "msg", "Username or password is required");
                 // await Page.DisplayAlert("success", "Username or password is required", "OK");
                 isValid = false;
             }

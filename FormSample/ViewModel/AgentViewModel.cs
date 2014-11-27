@@ -1,6 +1,7 @@
 ﻿using System;
 using FormSample.ViewModel;
 using System.Threading.Tasks;
+using FormSample.Helpers;
 
 namespace FormSample
 {
@@ -105,7 +106,12 @@ namespace FormSample
 					Phone = this.Phone
 				};
 
-				await dataService.AddAgent(a);
+				var result = await dataService.AddAgent(a);
+                if(result !=null && !string.IsNullOrWhiteSpace(result.Email))
+                {
+                    this.CreateDatabase(result);
+                    Settings.GeneralSettings = result.Email;
+                }
 
 				await navigation.PushAsync(new HomePage());
 			}
@@ -118,6 +124,13 @@ namespace FormSample
 
 			//}
 		}
+
+        private void CreateDatabase(Agent responseFromServer)
+        {
+            FormSample.AgentDatabase d = new AgentDatabase();
+            var t = d.GetAgents();
+            d.SaveItem(responseFromServer);
+        }
 	}
 }
 

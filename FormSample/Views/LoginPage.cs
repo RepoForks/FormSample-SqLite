@@ -15,6 +15,10 @@ namespace FormSample.Views
 
         public LoginPage()
         {
+            MessagingCenter.Subscribe<LoginViewModel,string>(this,"msg",(sender,args)=>{
+                DisplayAlert("Message",args,"OK");
+            });
+
             BindingContext = new LoginViewModel(Navigation);
 
             BackgroundColor = Color.FromHex("232323");
