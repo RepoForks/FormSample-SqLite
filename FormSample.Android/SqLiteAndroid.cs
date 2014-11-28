@@ -1,16 +1,31 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
+
+using Android.Graphics;
+
+using FormSample.Droid;
+
 using Xamarin.Forms;
-using FormSample.Android;
+ 
+
+using Xamarin.Forms.Labs.Controls;
+using Xamarin.Forms.Platform.Android;
+
 
 [assembly: Dependency (typeof (SQLite_Android))]
-namespace FormSample.Android
+namespace FormSample.Droid
 {
+    using Xamarin.Forms.Labs.Controls;
+    using Xamarin.Forms.Platform.Android;
 
-	public class SQLite_Android : ISqLite
+    using Path = System.IO.Path;
+
+    public class SQLite_Android : ISqLite
 	{
 		public SQLite_Android ()
 		{
+
 		}
 
 		#region ISQLite implementation
@@ -58,4 +73,5 @@ namespace FormSample.Android
 		}
 	}
 }
+
 

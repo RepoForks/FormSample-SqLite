@@ -15,9 +15,7 @@ namespace FormSample.Views
 
         public LoginPage()
         {
-            MessagingCenter.Subscribe<LoginViewModel,string>(this,"msg",(sender,args)=>{
-                DisplayAlert("Message",args,"OK");
-            });
+
 
             BindingContext = new LoginViewModel(Navigation);
 
@@ -39,7 +37,7 @@ namespace FormSample.Views
 
             var username = new Entry { Placeholder = "Username" };
             username.SetBinding(Entry.TextProperty, LoginViewModel.UsernamePropertyName);
-			username.Keyboard = Keyboard.Email;
+            username.Keyboard = Keyboard.Email;
             layout.Children.Add(username);
 
             var password = new Entry { Placeholder = "Password" };
@@ -47,25 +45,36 @@ namespace FormSample.Views
             password.IsPassword = true;
             layout.Children.Add(password);
 
-            var forgotPassword = new Button{ Text = "I have forgetton my password", TextColor = Color.Blue };
+            var forgotPassword = new Button { Text = "I have forgetton my password", TextColor = Color.Blue };
 
-			var button = new Button { Text = "Sign In", TextColor = Color.White,BackgroundColor = Color.Blue, };
+            var button = new Button { Text = "Sign In", TextColor = Color.White, BackgroundColor = Color.Blue, };
             button.SetBinding(Button.CommandProperty, LoginViewModel.LoginCommandPropertyName);
 
-			var registerButton = new Button{ Text = "I don't have a recruiter account..",BackgroundColor = Color.Lime, TextColor = Color.White };
+            var registerButton = new Button { Text = "I don't have a recruiter account..", BackgroundColor = Color.Lime, TextColor = Color.White };
             registerButton.SetBinding(Button.CommandProperty, LoginViewModel.GoToRegisterCommandPropertyName);
 
-            var downloadButton = new Button{ Text = "Download Terms and Conditions",BackgroundColor = Color.Yellow, TextColor = Color.White };
-			var contactUsButton = new Button{ Text = "Contact Us",BackgroundColor = Color.Teal, TextColor = Color.White };
+            var downloadButton = new Button { Text = "Download Terms and Conditions", BackgroundColor = Color.Yellow, TextColor = Color.White };
+            var contactUsButton = new Button { Text = "Contact Us", BackgroundColor = Color.Teal, TextColor = Color.White };
 
             layout.Children.Add(button);
-			layout.Children.Add(registerButton);
-			layout.Children.Add(downloadButton);
-			layout.Children.Add(contactUsButton);
+            layout.Children.Add(registerButton);
+            layout.Children.Add(downloadButton);
+            layout.Children.Add(contactUsButton);
 
             Content = new ScrollView { Content = layout };
         }
 
-       
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            MessagingCenter.Subscribe<LoginViewModel, string>(this, "msg", (sender, args) => this.DisplayAlert("Message", args, "OK"));
+
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            MessagingCenter.Unsubscribe<LoginViewModel, string>(this, "msg");
+        }
     }
 }

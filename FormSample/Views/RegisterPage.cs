@@ -64,7 +64,7 @@ namespace FormSample
 
 			var chkInvite = new CheckBox();
 			chkInvite.SetBinding(CheckBox.CheckedProperty,AgentViewModel.isCheckedPropertyName);
-			chkInvite.UncheckedText = "I Agree to the terms and condition";
+			chkInvite.DefaultText = "I Agree to the terms and condition";
 			chkInvite.IsVisible = true;
 			// chkInvite.BackgroundColor = Color.Blue;
 			// chkInvite.Checked = true;
@@ -105,7 +105,7 @@ namespace FormSample
 				Padding = new Thickness(20, 0, 10, 0),
 				HorizontalOptions = LayoutOptions.StartAndExpand,
 				Orientation = StackOrientation.Vertical,
-				Children = { emailLabel, emailText, firstNameLabel, firstName, lastNameLabel, lastName, agencyLabel, agencyText, phoneLabel, phoneText, b },
+				Children = { emailLabel, emailText, firstNameLabel, firstName, lastNameLabel, lastName, agencyLabel, agencyText, phoneLabel, phoneText,chkInvite, b },
 				BackgroundColor = Color.Gray
 			};
 			return nameLayout;

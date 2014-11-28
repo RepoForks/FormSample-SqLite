@@ -6,7 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace FormSample.Android
+namespace FormSample.Droid
 {
     using global::Android.Content.PM;
 
