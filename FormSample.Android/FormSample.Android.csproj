@@ -84,11 +84,15 @@
   <ItemGroup>
     <Compile Include="CheckBoxRenderer.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MenuTableViewRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqLiteAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -100,6 +104,8 @@
     <AndroidResource Include="Resources\drawable\index6.jpg" />
     <AndroidResource Include="Resources\drawable\index7.jpg" />
     <AndroidResource Include="Resources\drawable\index8.jpg" />
+    <AndroidResource Include="Resources\drawable\slideout.png" />
+    <AndroidResource Include="Resources\drawable\slideout2x.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

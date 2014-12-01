@@ -15,13 +15,28 @@ namespace FormSample
     {
         public static INavigation Navigation { get; private set; }
 
+        public static Color NavTint
+        {
+            get
+            {
+                return Color.FromHex("3498DB"); // Xamarin Blue
+            }
+        }
+
+        public static Color HeaderTint
+        {
+            get
+            {
+                return Color.FromHex("2C3E50"); // Xamarin DarkBlue
+            }
+        }
 
         private async Task<bool> IsNetworkAvailable()
         {
             var network = Resolver.Resolve<IDevice>().Network;
             //var dev = Resolver.Resolve<IDevice>().PhoneService;
             //dev.DialNumber("989898989");
-           
+
 
             var isReachable = await network.IsReachable("www.yahoo.com", TimeSpan.FromSeconds(15));
             return isReachable;
@@ -30,18 +45,22 @@ namespace FormSample
 
         public static Page GetMainPage()
         {
-            
-            NavigationPage page = null;
+            Page page = null;
             try
             {
-                /// Settings.GeneralSettings= string.Empty;
+                // Settings.GeneralSettings= string.Empty;
                 if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
                 {
-                    page= new NavigationPage(new LoginPage());
+                    page = new HomePage();
+                    var md = new MasterDetailPage();
+
+                    md.Master = new MenuPage(md);
+                    md.Detail = new NavigationPage(page) { BarBackgroundColor = Color.Gray };
+
+                    return md;
                 }
-                else{
-                    page = new NavigationPage(new LoginPage());
-                }
+
+                page = new NavigationPage(new LoginPage());
 
                 //			    page = new NavigationPage(new LoginPage());
                 //                if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))

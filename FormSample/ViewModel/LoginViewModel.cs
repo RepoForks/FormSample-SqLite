@@ -8,6 +8,7 @@ namespace FormSample.ViewModel
 {
     using System.Diagnostics;
 
+    using FormSample.Helpers;
     using FormSample.Views;
 
     using Xamarin.Forms;
@@ -55,7 +56,15 @@ namespace FormSample.ViewModel
             {
                 if(await ValidateFields())
                 {
-                    await navigation.PushAsync(new HomePage());
+                    Settings.GeneralSettings = this.Username;
+
+                    var page = new HomePage();
+                    var md = new MasterDetailPage();
+
+                    md.Master = new MenuPage(md);
+                    md.Detail = new NavigationPage(page) { BarBackgroundColor = Color.Gray };
+                     
+                    await navigation.PushAsync(md);
                 }
                  
             }

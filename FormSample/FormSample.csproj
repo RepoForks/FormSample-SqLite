@@ -42,6 +42,7 @@
     <Compile Include="Views\ContractorPage.cs" />
     <Compile Include="Views\CustomCell.cs" />
     <Compile Include="PlotView.cs" />
+    <Compile Include="Views\MenuPage.cs" />
     <Compile Include="Views\RegisterPage.cs" />
     <Compile Include="Views\HomePage.cs" />
     <Compile Include="Views\LoginPage.cs" />
@@ -92,9 +93,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
+  <ItemGroup />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>

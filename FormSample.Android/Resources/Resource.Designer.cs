@@ -182,6 +182,12 @@ namespace FormSample.Droid
 			// aapt resource value: 0x7f020007
 			public const int index8 = 2130837511;
 			
+			// aapt resource value: 0x7f020008
+			public const int slideout = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int slideout2x = 2130837513;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
