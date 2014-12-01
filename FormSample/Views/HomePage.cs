@@ -16,6 +16,8 @@ namespace FormSample.Views
         public HomePage()
         {
 
+
+
             var layout = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
@@ -174,5 +176,7 @@ namespace FormSample.Views
             ////this.Content = grid;
 
         }
+
+       
     }
 }

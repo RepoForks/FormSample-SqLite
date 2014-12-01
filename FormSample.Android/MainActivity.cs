@@ -12,7 +12,7 @@ namespace FormSample.Droid
 
     using Xamarin.Forms.Platform.Android;
 
-    [Activity(Label = "Form Sample", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Mobile Recruiter", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : AndroidActivity
     {
         protected override void OnCreate(Bundle bundle)
