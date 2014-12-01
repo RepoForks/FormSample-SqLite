@@ -25,24 +25,16 @@ namespace FormSample
             }
         }
 
-        private async Task<bool> IsNetworkAvailable()
-        {
-            var network = Resolver.Resolve<IDevice>().Network;
-//            var dev = Resolver.Resolve<IDevice>().PhoneService;
-//            dev.DialNumber("989898989");
-          
 
-            var isReachable = await network.IsReachable("www.yahoo.com", TimeSpan.FromSeconds(15));
-            return isReachable;
-
-        }
 
         public static Page GetMainPage()
         {
 
+
             Page page = null;
             try
             {
+                 
 //                /// Settings.GeneralSettings= string.Empty;
                 if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
                 {
