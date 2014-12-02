@@ -4,18 +4,16 @@ using Xamarin.Forms.Labs.Services;
 
 namespace FormSample
 {
+    using System.ComponentModel;
     using System.Threading.Tasks;
 
     using FormSample.Helpers;
     using FormSample.Views;
-
-
     using Xamarin.Forms.Labs;
-
-
     public class App
     {
         public static INavigation Navigation { get; private set; }
+        
         public static Color NavTint
         {
             get
@@ -31,16 +29,13 @@ namespace FormSample
             }
         }
 
-
-
-
-
-
         public static Page GetMainPage()
         {
             Page page = null;
             try
             {
+                
+                
                 // Settings.GeneralSettings= string.Empty;
                 ////if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
                 ////{
@@ -56,7 +51,7 @@ namespace FormSample
                 page = new NavigationPage(new LoginPage());
 
 
-
+                 
 
 
 
@@ -97,6 +92,8 @@ namespace FormSample
             }
             return page;
         }
+
+
     }
 
     public class CustomerPage : ContentPage
@@ -141,6 +138,11 @@ namespace FormSample
             listView.ItemTemplate = new DataTemplate(typeof(CustomCell));
             listView.ItemsSource = entries;
         }
+    }
+
+    public interface INetworkService1
+    {
+        bool IsReachable();
     }
 }
 

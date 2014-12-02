@@ -9,30 +9,33 @@ using Xamarin.Forms.Labs;
 namespace FormSample.Views
 {
     using Xamarin.Forms;
+    using Acr.XamForms.Mobile.Net;
 
     public class HomePage : ContentPage
     {
-
+        private INetworkService _network { get; set; }
         int count = 1;
 
-        private async Task<bool> IsNetworkAvailable()
+        private bool IsNetworkAvailable()
         {
-            var network = Resolver.Resolve<IDevice>().Network;
-            //            var dev = Resolver.Resolve<IDevice>().PhoneService;
-            //            dev.DialNumber("989898989");
+            //var network = Resolver.Resolve<IDevice>().Network;
+            ////            var dev = Resolver.Resolve<IDevice>().PhoneService;
+            ////            dev.DialNumber("989898989");
+            //var isReachable = await network.IsReachable("www.yahoo.com", TimeSpan.FromSeconds(1));
 
-
-            var isReachable = await network.IsReachable("www.yahoo.com", TimeSpan.FromSeconds(1));
-
-            return isReachable;
-
+            //return isReachable;
+            var x = DependencyService.Get<INetworkService1>().IsReachable();
+            // this._network.IsHostReachable("www.google.com");
+            var tmp = x;
+            return true;
         }
 
         public HomePage()
         {
+            
 
-            var t = IsNetworkAvailable();
-            var x = t.Result;
+            var t = this.IsNetworkAvailable();
+            
 
             Title = "Home";
 

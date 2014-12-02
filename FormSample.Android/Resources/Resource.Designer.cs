@@ -26,6 +26,8 @@ namespace FormSample.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Acr.XamForms.Mobile.Droid.Resource.String.ApplicationName = global::FormSample.Droid.Resource.String.ApplicationName;
+			global::Acr.XamForms.Mobile.Droid.Resource.String.Hello = global::FormSample.Droid.Resource.String.Hello;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::FormSample.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::FormSample.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_active_month_bg = global::FormSample.Droid.Resource.Color.calendar_active_month_bg;
