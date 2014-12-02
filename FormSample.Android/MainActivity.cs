@@ -18,42 +18,42 @@ namespace FormSample.Droid
     using Xamarin.Forms.Platform.Android;
 
     [Activity(Label = "Mobile Recruiter", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity :  XFormsApplicationDroid
+    public class MainActivity : XFormsApplicationDroid
     {
-		bool _initialized = false;
+        bool _initialized = false;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-			if (!_initialized) Initialise(bundle);
+            if (!_initialized) Initialise(bundle);
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
             SetPage(App.GetMainPage());
         }
 
-		private void Initialise(Bundle bundle)
-		{
-			Forms.Init(this, bundle);
-			var container = new SimpleContainer();
-			var app = new XFormsAppDroid();
-			app.Init(this);
+        private void Initialise(Bundle bundle)
+        {
+            Forms.Init(this, bundle);
+            var container = new SimpleContainer();
+            var app = new XFormsAppDroid();
+            app.Init(this);
 
-			var data = app.AppDataDirectory;
-
-
-			container.Register (t => AndroidDevice.CurrentDevice)
-				.Register (t => t.Resolve<IDevice> ().Display)
-				.Register (t => t.Resolve<IDevice> ().Network)
-				.Register<IDependencyContainer> (container)
-				.Register<IXFormsApp> (app);
+            var data = app.AppDataDirectory;
 
 
-			Resolver.SetResolver(container.GetResolver());
-			// App.Initialise();
+            container.Register(t => AndroidDevice.CurrentDevice)
+                .Register(t => t.Resolve<IDevice>().Display)
+                .Register(t => t.Resolve<IDevice>().Network)
+                .Register<IDependencyContainer>(container)
+                .Register<IXFormsApp>(app);
 
-			_initialized = true;
-		}
+
+            Resolver.SetResolver(container.GetResolver());
+            // App.Initialise();
+
+            _initialized = true;
+        }
     }
 }
 

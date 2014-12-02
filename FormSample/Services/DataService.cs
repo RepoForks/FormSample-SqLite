@@ -14,6 +14,8 @@ namespace FormSample
 
         private string postDataUrl = "http://134.213.136.240:1081/api/agents";
 
+        private string localUrl = "http://192.168.170.32:8099/api/customer";
+
         public List<Agent> filteredCustomerList { get; set; }
 
         public DataService()
@@ -37,7 +39,7 @@ namespace FormSample
         public async Task<List<Agent>> GetCustomers()
         {
             HttpClient client = new HttpClient();
-            var result = await client.GetAsync(url);
+            var result = await client.GetAsync(localUrl);
             var json = await result.Content.ReadAsStringAsync();
             var response = JsonConvert.DeserializeObject<List<Agent>>(json);
             return response;

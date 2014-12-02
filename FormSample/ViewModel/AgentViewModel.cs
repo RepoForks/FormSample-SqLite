@@ -6,8 +6,10 @@ using FormSample.Helpers;
 namespace FormSample
 {
     using FormSample.Views;
+    
 
     using Xamarin.Forms;
+    
 
     public class AgentViewModel : BaseViewModel
     {

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FormSample.Views
 {
-    using FormSample.ViewModel;
+  
+
+    using global::FormSample.ViewModel;
+
     using Xamarin.Forms;
 
     public class LoginPage : ContentPage
@@ -15,7 +18,7 @@ namespace FormSample.Views
 
         public LoginPage()
         {
-
+            Title = "Login to system";
 
             BindingContext = new LoginViewModel(Navigation);
 

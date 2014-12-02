@@ -32,7 +32,9 @@ namespace FormSample.Views
         {
 
             var t = IsNetworkAvailable();
+            var x = t.Result;
 
+            Title = "Home";
 
             var layout = new StackLayout
             {
@@ -113,17 +115,6 @@ namespace FormSample.Views
             layout.Children.Add(grid);
             layout.Children.Add(gridButton);
             Content = layout;
-
-
-
-           
-
         }
-
-<<<<<<< HEAD
-         
-=======
-       
->>>>>>> origin/master
     }
 }

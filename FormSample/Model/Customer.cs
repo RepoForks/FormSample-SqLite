@@ -25,6 +25,7 @@ namespace FormSample
         public string LastName { get; set; }
         public string AgencyName { get; set; }
         public string Phone { get; set; }
+        public string City { get; set; }
         
     }
 

@@ -11,8 +11,9 @@ namespace FormSample
 
         public RegisterPage()
         {
+            Title = "Register";
             var layout = this.AssignValues();
-            this.Content = layout;
+            this.Content = new ScrollView { Content = layout };
         }
 
         public StackLayout AssignValues()

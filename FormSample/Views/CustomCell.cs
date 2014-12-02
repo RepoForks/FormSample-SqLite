@@ -5,6 +5,7 @@ namespace FormSample
 {
     public class CustomCell : ViewCell
     {
+        
         public CustomCell()
         {
             var image = new Image
@@ -22,9 +23,13 @@ namespace FormSample
             var viewLayout = new StackLayout()
             {
                 Orientation = StackOrientation.Horizontal,
-                Children = { image, nameLayout }
+                
+                Children = { nameLayout }
             };
 
+            viewLayout.BackgroundColor = CustomerPage.counter % 2 == 0 ? Color.Gray : Color.Silver;
+
+            CustomerPage.counter++;
             View = viewLayout;
         }
 
@@ -32,15 +37,17 @@ namespace FormSample
         {
             var nameLabel = new Label { HorizontalOptions = LayoutOptions.FillAndExpand };
             nameLabel.SetBinding(Label.TextProperty, new Binding("FirstName"));
+            nameLabel.WidthRequest = 200;
+            nameLabel.TextColor = Color.Black;
 
             var cityLabel = new Label { HorizontalOptions = LayoutOptions.FillAndExpand };
-
             cityLabel.SetBinding(Label.TextProperty, new Binding("City"));
+            cityLabel.TextColor = Color.Black;
 
             var nameLayout = new StackLayout()
             {
                 HorizontalOptions = LayoutOptions.StartAndExpand,
-                Orientation = StackOrientation.Vertical,
+                Orientation = StackOrientation.Horizontal,
                 Children = { nameLabel, cityLabel }
             };
 

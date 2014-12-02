@@ -10,8 +10,10 @@ namespace FormSample.ViewModel
 
     using FormSample.Helpers;
     using FormSample.Views;
+    
 
     using Xamarin.Forms;
+     
 
     public class LoginViewModel : BaseViewModel
     {
