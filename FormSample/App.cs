@@ -14,6 +14,16 @@ namespace FormSample
     public class App
     {
         public static INavigation Navigation { get; private set; }
+        public static Color NavTint {
+            get {
+                return Color.FromHex ("3498DB"); // Xamarin Blue
+            }
+        }
+        public static Color HeaderTint {
+            get {
+                return Color.FromHex ("2C3E50"); // Xamarin DarkBlue
+            }
+        }
 
         public static Color NavTint
         {
@@ -31,6 +41,7 @@ namespace FormSample
             }
         }
 
+<<<<<<< HEAD
         private async Task<bool> IsNetworkAvailable()
         {
             var network = Resolver.Resolve<IDevice>().Network;
@@ -61,6 +72,35 @@ namespace FormSample
                 }
 
                 page = new NavigationPage(new LoginPage());
+=======
+
+        public static Page GetMainPage()
+        {
+
+
+            Page page = null;
+            try
+            {
+                 
+//                /// Settings.GeneralSettings= string.Empty;
+                if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
+                {
+                    page= new HomePage();
+                }
+                else{
+                    page = new LoginPage();
+                }
+
+                var md = new MasterDetailPage ();
+
+                md.Master = new MenuPage (md);
+                md.Detail = new NavigationPage(page) {Tint = App.NavTint};
+                // md.IsVisible = false;
+                return md;
+
+               
+
+>>>>>>> origin/master
 
                 //			    page = new NavigationPage(new LoginPage());
                 //                if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
@@ -95,7 +135,7 @@ namespace FormSample
             catch (Exception ex)
             {
             }
-            return page;
+           return page;
         }
     }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms.Labs.Services;
+using Xamarin.Forms.Labs;
 
 namespace FormSample.Views
 {
@@ -13,8 +15,24 @@ namespace FormSample.Views
 
         int count = 1;
 
+        private async Task<bool> IsNetworkAvailable()
+        {
+            var network = Resolver.Resolve<IDevice>().Network;
+            //            var dev = Resolver.Resolve<IDevice>().PhoneService;
+            //            dev.DialNumber("989898989");
+
+
+            var isReachable = await network.IsReachable("www.yahoo.com", TimeSpan.FromSeconds(1));
+
+            return isReachable;
+
+        }
+
         public HomePage()
         {
+
+            var t = IsNetworkAvailable();
+
 
             var layout = new StackLayout
             {
@@ -102,6 +120,10 @@ namespace FormSample.Views
 
         }
 
+<<<<<<< HEAD
          
+=======
+       
+>>>>>>> origin/master
     }
 }
