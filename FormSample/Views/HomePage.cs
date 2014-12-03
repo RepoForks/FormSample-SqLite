@@ -9,7 +9,7 @@ using Xamarin.Forms.Labs;
 namespace FormSample.Views
 {
     using Xamarin.Forms;
-    using Acr.XamForms.Mobile.Net;
+    
 
     public class HomePage : ContentPage
     {
@@ -24,7 +24,7 @@ namespace FormSample.Views
             //var isReachable = await network.IsReachable("www.yahoo.com", TimeSpan.FromSeconds(1));
 
             //return isReachable;
-            var x = DependencyService.Get<INetworkService1>().IsReachable();
+            var x = DependencyService.Get<INetworkService>().IsReachable();
             // this._network.IsHostReachable("www.google.com");
             var tmp = x;
             return true;

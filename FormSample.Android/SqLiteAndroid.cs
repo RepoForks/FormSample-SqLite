@@ -1,24 +1,13 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
-
-using Android.Graphics;
 
 using FormSample.Droid;
 
 using Xamarin.Forms;
- 
-
-using Xamarin.Forms.Labs.Controls;
-using Xamarin.Forms.Platform.Android;
-
 
 [assembly: Dependency (typeof (SQLite_Android))]
 namespace FormSample.Droid
 {
-    using Xamarin.Forms.Labs.Controls;
-    using Xamarin.Forms.Platform.Android;
-
     using Path = System.IO.Path;
 
     public class SQLite_Android : ISqLite
@@ -35,18 +24,7 @@ namespace FormSample.Droid
 			string documentsPath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal); // Documents folder
 			var path = Path.Combine(documentsPath, sqliteFilename);
 
-//			// This is where we copy in the prepopulated database
-//			Console.WriteLine (path);
-//			if (!File.Exists(path))
-//			{
-//				var s = Forms.Context.Resources.OpenRawResource(Resource.Raw.TodoSQLite);  // RESOURCE NAME ###
-//
-//				// create a write stream
-//				FileStream writeStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
-//				// write to the stream
-//				ReadWriteStream(s, writeStream);
-//			}
-			var plat = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
+            var plat = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
 			var conn = new SQLite.Net.SQLiteConnection(plat, path);
 
 			// Return the database connection 

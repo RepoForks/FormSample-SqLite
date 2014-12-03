@@ -67,14 +67,14 @@ namespace FormSample
             return response;
         }
 
-        public async Task<ResponseBase> DeleteAgent(Agent agent)
+        public async Task<Agent> DeleteCustomer(int id)
         {
-            var requestJson = JsonConvert.SerializeObject(agent, Formatting.Indented);
+            // var requestJson = JsonConvert.SerializeObject(agent, Formatting.Indented);
 
             HttpClient client = new HttpClient();
-            var result = await client.PostAsync(postDataUrl, new StringContent(requestJson, Encoding.UTF8, "application/json"));
+            var result = await client.DeleteAsync(this.localUrl + "/" + id);
             var json = await result.Content.ReadAsStringAsync();
-            var response = JsonConvert.DeserializeObject<ResponseBase>(json);
+            var response = JsonConvert.DeserializeObject<Agent>(json);
             return response;
         }
     }

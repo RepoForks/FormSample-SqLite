@@ -1,28 +1,14 @@
-﻿using System;
-using Android.App;
-using Android.Net;
+﻿using Android.App;
 using Android.OS;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
- 
-using Xamarin.Forms.Labs.Droid;
-using Xamarin.Forms.Labs.Services;
-using Xamarin.Forms.Labs;
-using Xamarin.Forms;
-using Xamarin.Forms.Labs.Mvvm;
 
 namespace FormSample.Droid
 {
-    using Android.Net;
-
     using global::Android.Content.PM;
 
     using Xamarin.Forms.Platform.Android;
 
-    [Activity(Label = "Mobile Recruiter", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : XFormsApplicationDroid
+    [Activity(Label = "Customer page", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    public class MainActivity : AndroidActivity
     {
         bool _initialized = false;
         protected override void OnCreate(Bundle bundle)
@@ -36,28 +22,28 @@ namespace FormSample.Droid
             SetPage(App.GetMainPage());
         }
 
-        private void Initialise(Bundle bundle)
-        {
-            Forms.Init(this, bundle);
-            var container = new SimpleContainer();
-            var app = new XFormsAppDroid();
-            app.Init(this);
+        //private void Initialise(Bundle bundle)
+        //{
+        //    Forms.Init(this, bundle);
+        //    var container = new SimpleContainer();
+        //    var app = new XFormsAppDroid();
+        //    app.Init(this);
 
-            var data = app.AppDataDirectory;
-
-
-            container.Register(t => AndroidDevice.CurrentDevice)
-                .Register(t => t.Resolve<IDevice>().Display)
-                .Register(t => t.Resolve<IDevice>().Network)
-                .Register<IDependencyContainer>(container)
-                .Register<IXFormsApp>(app);
+        //    var data = app.AppDataDirectory;
 
 
-            Resolver.SetResolver(container.GetResolver());
-            // App.Initialise();
+        //    container.Register(t => AndroidDevice.CurrentDevice)
+        //        .Register(t => t.Resolve<IDevice>().Display)
+        //        .Register(t => t.Resolve<IDevice>().Network)
+        //        .Register<IDependencyContainer>(container)
+        //        .Register<IXFormsApp>(app);
 
-            _initialized = true;
-        }
+
+        //    Resolver.SetResolver(container.GetResolver());
+        //    // App.Initialise();
+
+        //    _initialized = true;
+        //}
 
         
     }

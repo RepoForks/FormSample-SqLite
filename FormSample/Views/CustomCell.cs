@@ -55,25 +55,25 @@ namespace FormSample
 
         }
 
-        protected override void OnTapped()
-        {
-            base.OnTapped();
+        ////protected override void OnTapped()
+        ////{
+        ////    base.OnTapped();
 
-            var entry = (BindingContext as Agent);
+        ////    var entry = (BindingContext as Agent);
 
-            var article = new WebView()
-            {
-                Source = new UrlWebViewSource
-                {
-                    Url = "www.google.com",
-                },
-                VerticalOptions = LayoutOptions.FillAndExpand
-            };
+        ////    var article = new WebView()
+        ////    {
+        ////        Source = new UrlWebViewSource
+        ////        {
+        ////            Url = "www.google.com",
+        ////        },
+        ////        VerticalOptions = LayoutOptions.FillAndExpand
+        ////    };
 
-            App.Navigation.PushAsync(new RegisterPage());
-            // App.Navigation.PushAsync(new ChartPage());
+        ////    App.Navigation.PushAsync(new RegisterPage());
+        ////    // App.Navigation.PushAsync(new ChartPage());
 
-        }
+        ////}
 
     }
 }

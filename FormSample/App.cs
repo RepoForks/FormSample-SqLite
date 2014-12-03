@@ -4,10 +4,12 @@ using Xamarin.Forms.Labs.Services;
 
 namespace FormSample
 {
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Threading.Tasks;
 
     using FormSample.Helpers;
+    using FormSample.ViewModel;
     using FormSample.Views;
     using Xamarin.Forms.Labs;
     public class App
@@ -34,8 +36,12 @@ namespace FormSample
             Page page = null;
             try
             {
-                
-                
+                Agent a = new Agent() { FirstName = "sudhir", LastName = "thanki", City = "ahd", };
+                Agent b = new Agent() { FirstName = "san", LastName = "modha", City = "pbr", };
+                AgentDatabase d = new AgentDatabase();
+                d.SaveItem(a);
+                d.SaveItem(b);
+
                 // Settings.GeneralSettings= string.Empty;
                 ////if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
                 ////{
@@ -48,7 +54,7 @@ namespace FormSample
                 ////    return md;
                 ////}
 
-                page = new NavigationPage(new LoginPage());
+                page = new NavigationPage(new CustomerPage());
 
 
                  
@@ -89,6 +95,7 @@ namespace FormSample
             }
             catch (Exception ex)
             {
+                throw ex;
             }
             return page;
         }
@@ -98,11 +105,22 @@ namespace FormSample
 
     public class CustomerPage : ContentPage
     {
+        
         public static int counter { get; set; }
 
+        private CustomerViewModel viewModel = new CustomerViewModel();
         private ListView listView;
         public CustomerPage()
         {
+            var x = DependencyService.Get<INetworkService>().IsReachable();
+            if (!x)
+            {
+                DisplayAlert("Message", "No connection found!", "OK");
+            }
+
+            var d = DependencyService.Get<IDeviceService>();
+            d.Call("123455");
+
             counter = 1;
             Title = "Customers";
 
@@ -119,30 +137,53 @@ namespace FormSample
             grid.Children.Add(new Label { Text = "Name" }, 0, 0); // Left, First element
             grid.Children.Add(new Label { Text = "City" }, 1, 0);
             
-            
-
             Content = new StackLayout
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 Children = { grid, listView }
             };
+            listView.ItemTapped += async (sender, args) =>
+            {
+                var customer = args.Item as Agent;
+                if (customer == null)
+                    return;
+
+                var answer = await DisplayAlert("Confrim?", "are you sure?", "Yes", "No");
+                if (answer)
+                {
+                    this.viewModel.DeleteCustomer(customer.Id);
+                    listView.ItemsSource = this.viewModel.customerList;
+                }
+
+                listView.SelectedItem = null;
+            };
 
 
         }
+
+         
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            var entries = await new DataService().GetCustomers();
+            //// var entries = await new DataService().GetCustomers();
+            //// listView.ItemsSource = entries;
             listView.ItemTemplate = new DataTemplate(typeof(CustomCell));
-            listView.ItemsSource = entries;
+            
+            listView.ItemsSource = this.viewModel.customerList;
         }
     }
 
-    public interface INetworkService1
+    public interface INetworkService
     {
         bool IsReachable();
+    }
+
+    public interface IDeviceService
+    {
+        void Call(string phoneNumber);
+
     }
 }
 
