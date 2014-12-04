@@ -3,8 +3,10 @@ using Android.OS;
 
 namespace FormSample.Droid
 {
-    using global::Android.Content.PM;
+    using FormSample.Views;
 
+    using global::Android.Content.PM;
+    using Xamarin.Forms;
     using Xamarin.Forms.Platform.Android;
 
     [Activity(Label = "Customer page", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -16,10 +18,16 @@ namespace FormSample.Droid
             base.OnCreate(bundle);
 
             // if (!_initialized) Initialise(bundle);
-
+            OxyPlot.XamarinFormsAndroid.Forms.Init();
             Xamarin.Forms.Forms.Init(this, bundle);
 
             SetPage(App.GetMainPage());
+            // BuildView();
+        }
+
+        static Page BuildView()
+        {
+            return new MainPage();
         }
 
         //private void Initialise(Bundle bundle)

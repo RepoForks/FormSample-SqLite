@@ -8,6 +8,8 @@ using Xamarin.Forms.Labs;
 
 namespace FormSample.Views
 {
+    using FormSample.Helpers;
+
     using Xamarin.Forms;
     
 
@@ -18,24 +20,23 @@ namespace FormSample.Views
 
         private bool IsNetworkAvailable()
         {
-            //var network = Resolver.Resolve<IDevice>().Network;
-            ////            var dev = Resolver.Resolve<IDevice>().PhoneService;
-            ////            dev.DialNumber("989898989");
-            //var isReachable = await network.IsReachable("www.yahoo.com", TimeSpan.FromSeconds(1));
-
-            //return isReachable;
             var x = DependencyService.Get<INetworkService>().IsReachable();
-            // this._network.IsHostReachable("www.google.com");
-            var tmp = x;
             return true;
+        }
+
+        private async Task GoToLoginPage()
+        {
+            if (string.IsNullOrWhiteSpace(Settings.GeneralSettings))
+            {
+                var page = new LoginPage();
+                await Navigation.PushModalAsync(page);
+            }
         }
 
         public HomePage()
         {
-            
-
-            var t = this.IsNetworkAvailable();
-            
+            // var t = this.IsNetworkAvailable();
+            this.GoToLoginPage();
 
             Title = "Home";
 

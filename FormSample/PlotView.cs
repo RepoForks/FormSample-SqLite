@@ -7,17 +7,24 @@ namespace FormSample
     /// <summary>
     /// Represents a visual element that displays a <see cref="PlotModel" />.
     /// </summary>
-    public class PlotView : View
+    public class OxyPlotView : View
     {
+        //public OxyPlotView() 
+        //{ 
+        //    WidthRequest = 40; 
+        //    HeightRequest = 40; 
+        //} 
+
+
         /// <summary>
         /// Identifies the <see cref="Controller" />  bindable property.
         /// </summary>
-        public static readonly BindableProperty ControllerProperty = BindableProperty.Create<PlotView, PlotController>(p => p.Controller, null);
+        public static readonly BindableProperty ControllerProperty = BindableProperty.Create<OxyPlotView, PlotController>(p => p.Controller, null);
 
         /// <summary>
         /// Identifies the <see cref="Model" />  bindable property.
         /// </summary>
-        public static readonly BindableProperty ModelProperty = BindableProperty.Create<PlotView, PlotModel>(p => p.Model, null);
+        public static readonly BindableProperty ModelProperty = BindableProperty.Create<OxyPlotView, PlotModel>(p => p.Model, null);
 
         /// <summary>
         /// Gets or sets the <see cref="PlotModel"/> to view.

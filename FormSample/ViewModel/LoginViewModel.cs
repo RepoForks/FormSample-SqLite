@@ -60,15 +60,14 @@ namespace FormSample.ViewModel
                 {
                     Settings.GeneralSettings = this.Username;
 
-                    var page = new HomePage();
-                    var md = new MasterDetailPage();
+                    //var page = new MainPage();
+                    //var md = new MasterDetailPage();
 
-                    md.Master = new MenuPage(md);
-                    md.Detail = new NavigationPage(page) { BarBackgroundColor = Color.Gray };
-                     
-                    await navigation.PushAsync(md);
+                    //md.Master = new MenuPage(md);
+                    //md.Detail = new NavigationPage(page) { BarBackgroundColor = Color.Gray };
+
+                    await navigation.PopModalAsync();
                 }
-                 
             }
             catch (Exception ex)
             {
@@ -94,7 +93,7 @@ namespace FormSample.ViewModel
         {
             try
             {
-                await navigation.PushAsync(new RegisterPage());
+                await navigation.PushModalAsync(new RegisterPage());
             }
             catch(Exception ex)
             {

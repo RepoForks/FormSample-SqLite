@@ -15,7 +15,7 @@ namespace FormSample
     public class App
     {
         public static INavigation Navigation { get; private set; }
-        
+
         public static Color NavTint
         {
             get
@@ -36,11 +36,11 @@ namespace FormSample
             Page page = null;
             try
             {
-                Agent a = new Agent() { FirstName = "sudhir", LastName = "thanki", City = "ahd", };
-                Agent b = new Agent() { FirstName = "san", LastName = "modha", City = "pbr", };
-                AgentDatabase d = new AgentDatabase();
-                d.SaveItem(a);
-                d.SaveItem(b);
+                //Agent a = new Agent() { FirstName = "sudhir", LastName = "thanki", City = "ahd", };
+                //Agent b = new Agent() { FirstName = "san", LastName = "modha", City = "pbr", };
+                //AgentDatabase d = new AgentDatabase();
+                //d.SaveItem(a);
+                //d.SaveItem(b);
 
                 // Settings.GeneralSettings= string.Empty;
                 ////if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
@@ -54,14 +54,10 @@ namespace FormSample
                 ////    return md;
                 ////}
 
-                page = new NavigationPage(new CustomerPage());
+                // page = new NavigationPage(new LoginPage());
 
 
-                 
-
-
-
-
+                page = new MainPage();
 
                 //			    page = new NavigationPage(new LoginPage());
                 //                if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
@@ -105,7 +101,7 @@ namespace FormSample
 
     public class CustomerPage : ContentPage
     {
-        
+
         public static int counter { get; set; }
 
         private CustomerViewModel viewModel = new CustomerViewModel();
@@ -132,11 +128,11 @@ namespace FormSample
             var grid = new Grid
             {
                 ColumnSpacing = 200
-                
-           };
+
+            };
             grid.Children.Add(new Label { Text = "Name" }, 0, 0); // Left, First element
             grid.Children.Add(new Label { Text = "City" }, 1, 0);
-            
+
             Content = new StackLayout
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -161,7 +157,7 @@ namespace FormSample
 
         }
 
-         
+
 
         protected override async void OnAppearing()
         {
@@ -170,7 +166,7 @@ namespace FormSample
             //// var entries = await new DataService().GetCustomers();
             //// listView.ItemsSource = entries;
             listView.ItemTemplate = new DataTemplate(typeof(CustomCell));
-            
+
             listView.ItemsSource = this.viewModel.customerList;
         }
     }

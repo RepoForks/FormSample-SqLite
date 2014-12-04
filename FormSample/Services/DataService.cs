@@ -50,7 +50,7 @@ namespace FormSample
             var requestJson = JsonConvert.SerializeObject(cust, Formatting.Indented);
 
             HttpClient client = new HttpClient();
-            var result = await client.PostAsync(postDataUrl,new StringContent(requestJson, Encoding.UTF8, "application/json"));
+            var result = await client.PostAsync(localUrl,new StringContent(requestJson, Encoding.UTF8, "application/json"));
             var json = await result.Content.ReadAsStringAsync();
             var response = JsonConvert.DeserializeObject<Agent>(json);
             return response;

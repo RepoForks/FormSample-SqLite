@@ -115,13 +115,13 @@ namespace FormSample
                     Settings.GeneralSettings = result.Email;
                 }
 
-                var page = new HomePage();
-                var md = new MasterDetailPage();
+                // var page = new HomePage();
+                //var md = new MasterDetailPage();
 
-                md.Master = new MenuPage(md);
-                md.Detail = new NavigationPage(page) { BarBackgroundColor = Color.Gray };
+                //md.Master = new MenuPage(md);
+                //md.Detail = new NavigationPage(page) { BarBackgroundColor = Color.Gray };
 
-                await navigation.PushAsync(md);
+                await navigation.PopModalAsync();
             }
             catch (Exception ex)
             {
