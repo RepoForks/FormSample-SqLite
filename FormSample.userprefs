@@ -1,38 +1,54 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.3215bc9a" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FormSample\Views\HomePage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FormSample\Views\MainPage.cs">
     <Files>
-      <File FileName="FormSample\App.cs" Line="13" Column="13" />
-      <File FileName="FormSample\Database\ISqLite.cs" Line="1" Column="1" />
-      <File FileName="FormSample.Android\SqLiteAndroid.cs" Line="1" Column="1" />
-      <File FileName="FormSample\Database\AgentDatabase.cs" Line="1" Column="1" />
-      <File FileName="FormSample.Android\Resources\values\Strings.xml" Line="1" Column="1" />
-      <File FileName="FormSample.Android\MainActivity.cs" Line="29" Column="29" />
-      <File FileName="FormSample\Views\HomePage.cs" Line="17" Column="17" />
-      <File FileName="FormSample\Views\MenuPage.cs" Line="23" Column="23" />
-      <File FileName="FormSample\Views\RegisterPage.cs" Line="24" Column="24" />
+      <File FileName="FormSample\Views\HomePage.cs" Line="46" Column="46" />
+      <File FileName="f:\RnD\xamarin\FormSample-new-master\FormSample\App.cs" Line="1" Column="1" />
+      <File FileName="FormSample\Views\MainPage.cs" Line="39" Column="39" />
+      <File FileName="FormSample\Views\LoginPage.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="FormSample" expanded="True">
+            <Node name="Views" expanded="True">
+              <Node name="MainPage.cs" selected="True" />
+            </Node>
+          </Node>
+          <Node name="FormSample.Android" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Images" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="30" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="15" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample.Android\SqLiteAndroid.cs" line="34" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="31" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="35" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="50" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="51" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="52" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="53" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="37" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="22" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample.Android\SqLiteAndroid.cs" line="12" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="38" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Database\AgentDatabase.cs" line="42" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="27" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="28" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="29" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="30" column="1" />
       <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\ViewModel\AgentViewModel.cs" line="112" column="1" />
       <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\ViewModel\AgentViewModel.cs" line="113" column="1" />
       <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\ViewModel\AgentViewModel.cs" line="114" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\App.cs" line="37" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Views\HomePage.cs" line="37" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Views\HomePage.cs" line="20" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Views\HomePage.cs" line="27" column="1" />
-      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Views\HomePage.cs" line="25" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\App.cs" line="180" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="64" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\Services\DataService.cs" line="65" column="1" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\App.cs" line="176" column="59" />
+      <Breakpoint file="F:\RnD\xamarin\FormSample-new-master\FormSample\App.cs" line="179" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="FormSample\Views\AboutUs.cs" line="57" offsetX="417" offsetY="896" expression="w" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

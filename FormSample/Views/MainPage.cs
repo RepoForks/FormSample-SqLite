@@ -25,6 +25,7 @@ namespace FormSample.Views
             this.NavigateTo("Home");
             // Detail = detailPage;
             // ShowLoginPage();
+
         }
 
        
@@ -51,9 +52,13 @@ namespace FormSample.Views
                 case "Favorites":
                     page = new ColumnChartPage();
                     break;
-                case "Room Plan":
-                    page = new ChartPage();
+                case "About us":
+                    page = new AboutUs();
                     break;
+                case "Contact us":
+                    page = new ContactUs();
+                    break;
+
                 case "Logout":
                     Settings.GeneralSettings = string.Empty;
                     // page = new LoginPage();

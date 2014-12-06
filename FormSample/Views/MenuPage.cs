@@ -52,7 +52,7 @@ namespace FormSample.Views
             this.Title = "Main Menu";
             this.Icon = "slideout.png";
 
-            var itemList = new List<string> { "Home", "Speakers", "Favorites","Logout" };
+            var itemList = new List<string> { "Home", "Speakers", "Favorites","About us","Contact us","Logout" };
             Menu = new ListView() { ItemsSource = itemList };
 
             //var section = new TableSection

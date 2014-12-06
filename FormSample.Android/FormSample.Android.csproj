@@ -46,14 +46,6 @@
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="OxyPlot, Version=2014.1.546.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\OxyPlot.Core.2014.1.546\lib\portable-net4+sl4+wp71+win8\OxyPlot.dll</HintPath>
-    </Reference>
     <Reference Include="OxyPlot.XamarinAndroid">
       <HintPath>..\packages\OxyPlot.XamarinAndroid.2014.1.546\lib\MonoAndroid\OxyPlot.XamarinAndroid.dll</HintPath>
     </Reference>
@@ -94,6 +86,12 @@
     <Reference Include="SQLite.Net.Platform.XamarinAndroid">
       <HintPath>..\packages\SQLite.Net.Platform.XamarinAndroid.2.4.1\lib\MonoAndroid\SQLite.Net.Platform.XamarinAndroid.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot">
+      <HintPath>..\packages\OxyPlot.Core.2014.1.546\lib\portable-net4+sl4+wp71+win8\OxyPlot.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckBoxRenderer.cs" />
@@ -105,6 +103,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqLiteAndroid.cs" />
+    <Compile Include="BaseUrlAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -116,13 +115,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
-    <AndroidResource Include="Resources\drawable\index4.jpg" />
-    <AndroidResource Include="Resources\drawable\index5.jpg" />
-    <AndroidResource Include="Resources\drawable\index6.jpg" />
-    <AndroidResource Include="Resources\drawable\index7.jpg" />
-    <AndroidResource Include="Resources\drawable\index8.jpg" />
     <AndroidResource Include="Resources\drawable\slideout.png" />
     <AndroidResource Include="Resources\drawable\slideout2x.png" />
+    <AndroidResource Include="Resources\drawable\logo_large_c9y13k30.png" />
+    <AndroidResource Include="Resources\drawable\MyContractors.jpg" />
+    <AndroidResource Include="Resources\drawable\aboutus.jpg" />
+    <AndroidResource Include="Resources\drawable\AmendDetail.jpg" />
+    <AndroidResource Include="Resources\drawable\PayCalculator.jpg" />
+    <AndroidResource Include="Resources\drawable\PayChart.jpg" />
+    <AndroidResource Include="Resources\drawable\homeheader.jpg" />
+    <AndroidResource Include="Resources\drawable\ContactPhoneNumber.jpg" />
+    <AndroidResource Include="Resources\drawable\ContactAgency.jpg" />
+    <AndroidResource Include="Resources\drawable\ContactMap.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -155,4 +159,11 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="Assets\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Images\Accountancy.jpg" />
+    <AndroidAsset Include="Assets\Images\APSCo.jpg" />
+  </ItemGroup>
 </Project>
