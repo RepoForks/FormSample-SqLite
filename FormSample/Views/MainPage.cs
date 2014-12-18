@@ -37,8 +37,8 @@ namespace FormSample.Views
                 await Navigation.PushModalAsync(page);
             }
         }
-        
-        private void NavigateTo(string item)
+
+        public void NavigateTo(string item)
         {
             Page page = new HomePage();
             switch (item)

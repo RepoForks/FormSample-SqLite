@@ -31,63 +31,15 @@ namespace FormSample
             }
         }
 
+        public static MainPage RootPage { get; set; }
+
         public static Page GetMainPage()
         {
             Page page = null;
             try
             {
-                //Agent a = new Agent() { FirstName = "sudhir", LastName = "thanki", City = "ahd", };
-                //Agent b = new Agent() { FirstName = "san", LastName = "modha", City = "pbr", };
-                //AgentDatabase d = new AgentDatabase();
-                //d.SaveItem(a);
-                //d.SaveItem(b);
-
-                // Settings.GeneralSettings= string.Empty;
-                ////if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
-                ////{
-                ////    page = new HomePage();
-                ////    var md = new MasterDetailPage();
-
-                ////    md.Master = new MenuPage(md);
-                ////    md.Detail = new NavigationPage(page) { BarBackgroundColor = Color.Gray };
-
-                ////    return md;
-                ////}
-
-                // page = new NavigationPage(new LoginPage());
-
-
-                page = new MainPage();
-
-                //			    page = new NavigationPage(new LoginPage());
-                //                if (!string.IsNullOrWhiteSpace(Settings.GeneralSettings))
-                //                {
-                //                    Navigation = page.Navigation;
-                //                    // return page;
-                //                    // return new HomePage();
-                //                }
-                //                    // return new LoginPage();
-                //                else
-                //                {
-                //                    page = new NavigationPage(new HomePage());
-                //                    Navigation = page.Navigation;
-                //                }
-                //                // return page;
-                //
-                //                //var navigationPage = new NavigationPage(new HackerNewsPage());
-                //                //Navigation = navigationPage.Navigation;
-                //
-                //                //return navigationPage;
-                //
-                //                ////            return new ContentPage
-                //                ////            { 
-                //                ////                Content = new Label
-                //                ////                {
-                //                ////                    Text = "Hello, Forms!",
-                //                ////                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                //                ////                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                //                ////                },
-                //                ////            };
+                RootPage = new MainPage();
+                page = RootPage;
             }
             catch (Exception ex)
             {

@@ -157,8 +157,9 @@ namespace FormSample.Views
             var tapGestureRecognizer = new TapGestureRecognizer ();
             tapGestureRecognizer.Tapped += (sender, e) =>
             {
-                    this.Navigation.PushAsync(new ChartPage());
+                App.RootPage.NavigateTo("Refer a contractor");
             };
+
             imgReferContractor.GestureRecognizers.Add(tapGestureRecognizer);
 
 
