@@ -11,6 +11,7 @@ namespace FormSample.Views
     using FormSample.Helpers;
 
     using Xamarin.Forms;
+    using Xamarin.Forms.Labs.Controls;
     
 
     public class HomePage : ContentPage
@@ -38,7 +39,7 @@ namespace FormSample.Views
             // var t = this.IsNetworkAvailable();
             this.GoToLoginPage();
 
-
+            
             Title = "Home";
             this.BackgroundColor = Color.White;
             var layout = new StackLayout
