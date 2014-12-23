@@ -22,7 +22,7 @@ namespace FormSample.Views
         private bool IsNetworkAvailable()
         {
             var x = DependencyService.Get<INetworkService>().IsReachable();
-            return true;
+            return x;
         }
 
         private async Task GoToLoginPage()
